@@ -1,0 +1,17 @@
+body {
+background: #1abc9c;
+font-family: Tahoma, Arial, sans-serif;
+color: #ffffff;
+}
+.all-articles a{
+    color: #ffffff;
+}
+
+.all-articles{
+    text-align: center;
+    font-weight: bold;
+}
+
+.content{
+    text-align: center;
+}

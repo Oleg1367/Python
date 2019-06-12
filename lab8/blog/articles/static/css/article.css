@@ -1,0 +1,73 @@
+body {
+background: #1abc9c;
+font-family: Tahoma, Arial, sans-serif;
+color: #ffffff;
+}
+.header img {
+    display: block;
+    width: 318px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.archive {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.post-title a , .all-articles a, .new-article a, .registration a{
+    color: #ffffff;
+}
+.article-author {
+    width: 50%;
+    float: left;
+    font-weight: bold;
+}
+.article-created-date {
+    text-align: right;
+}
+.all-articles{
+    text-align: center;
+    font-weight: bold;
+}
+.article-header img {
+    display: block;
+    width: 318px;
+    float: left;
+}
+
+.post-title{
+    display:inline-block;
+}
+.fold-button{
+    float: right;
+    display:inline-block;
+}
+.new-article, .registration{
+    text-align: right;
+}
+.content{
+    text-align: center;
+}
+
+.one-post.folded .article-author, .one-post.folded .article-created-date, .one-post.folded .article-text{
+    /* данный стиль применится только для элементов класса
+    .article-author, у которых родитель с классом one-post
+    имеет также класс folded */
+    display: none;
+}
+
+.one-post {
+    position: relative;
+    padding: 10px;
+}
+
+.one-post-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    z-index: -1; /* это свойство «отодвигает» элемент на задний план */
+    opacity: 0;
+}
