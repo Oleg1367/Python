@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Архив всех статей</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/article.css">
+    <script src="{{ STATIC_URL }}js/helloworld.js"></script>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="{{ STATIC_URL }}img/dpb-logo.png" alt=""/>
+        <div class="header-text-area">
+            <h2 class="service-title">Коллективный блог</h2>
+            <h2 class="new-article" ><a  href="/article/new">Создать статью</a></h2>
+            <h2 class="register-link"><a href="/registration/">Регистрация</a></h2>
+            <h2 class="register-link"><a href="/login/">Вход</a></h2>
+        </div>
+        <div class="icons-for-parallax">
+            <img class="icon-for-parallax-first" src="{{ STATIC_URL }}img/article-icon-for-parallax.png">
+            <img class="icon-for-parallax-second" src="{{ STATIC_URL }}img/article-icon-for-parallax.png">
+            <img class="icon-for-parallax-third" src="{{ STATIC_URL }}img/article-icon-for-parallax.png">
+        </div>
+    </div>
+    <div class="archive">
+        
+        {% for post in posts %}
+        <div class="one-post">
+                <b type="button" class="fold-button">свернуть</b>
+                <h2 class="post-title"><a href="article/{{ post.id }}">{{ post.title }}</a></h2>
+            <div class="article-info">
+                <div class="article-author">{{ post.author.username }}</div>
+                <div class="article-created-date">{{ post.created_date }}</div>
+            </div>
+            <div class="one-post-shadow"></div>
+            <p class="article-text">{{ post.get_excerpt }}</p>
+            
+        </div>
+        {% endfor %}
+    </div>
+    
+    <script src="{{ STATIC_URL }}js/jquery-3.3.1.min.js"></script>
+    <script src="{{ STATIC_URL }}js/fold-post.js"></script>
+    <script src="{{ STATIC_URL }}js/highlight-post.js"></script>
+    <script src="{{ STATIC_URL }}js/parallax.js"></script>
+</body>
+</html>
